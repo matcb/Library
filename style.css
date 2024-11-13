@@ -1,0 +1,126 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #7d7aff, #b0aaff);
+    min-height: 100vh;
+}
+
+/* Header */
+header {
+    cursor:pointer;
+    margin: 1em 0;
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 
+                0 8px 10px rgba(0, 0, 0, 0.2), 
+                0 12px 20px rgba(0, 0, 0, 0.15);
+
+    padding:5px 25px;
+    border-radius:8px;
+    font-weight: bold;
+}
+
+header h1 {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Book Grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    margin-bottom: 1em;
+    width: 100%;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    backdrop-filter: blur(8px) saturate(180%);
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0.5em;
+}
+
+.book-info {
+    text-align: center;
+    color: white;
+}
+
+.book-info h2 {
+    font-size: 1.2em;
+    margin-bottom: 0.3em;
+}
+
+.book-info p {
+    font-size: 0.9em;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    gap: 0.5em;
+}
+
+.pagination button {
+    padding: 0.5em 1em;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ffffff88;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+.pagination button:hover {
+    background-color: #ffffffcc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .book-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-grid {
+        grid-template-columns: 1fr;
+    }
+}
